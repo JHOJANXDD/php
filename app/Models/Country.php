@@ -11,4 +11,8 @@ class Country extends Model
     protected $primaryKey="country_id";
     public $timestamps=false;
     use HasFactory;
+
+    public function region(){
+        return $this->belongsTo(Region::class, 'region_id');
+    }
 }
